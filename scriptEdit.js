@@ -4,7 +4,7 @@ $(document).ready(function(){
  //   var search = $('#search').val();
  //   searchReddit(search);
  // });
-  // function searchReddit(redditData){
+ function searchReddit(){
 $.get('http://www.reddit.com/r/food/.json').done(function(response){
   console.log(response.data.children[0].data);
 //
@@ -15,6 +15,7 @@ $.get('http://www.reddit.com/r/food/.json').done(function(response){
     var score = response.data.children[i].data.score;
     $('body').append("<div><p>" + author + " </p></div>");
   }
+  searchReddit();
 });
 });
 // });
